@@ -121,13 +121,13 @@
   <data name="button9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="button61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button4" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -163,16 +163,7 @@
   <data name="lineselectkeyL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lineselectkeyL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="enterbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enterbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancelbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancelbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button71" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

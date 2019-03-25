@@ -133,29 +133,9 @@ namespace ATMSimulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button6 {
-            get {
-                object obj = ResourceManager.GetObject("button6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap button61 {
             get {
                 object obj = ResourceManager.GetObject("button61", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap button7 {
-            get {
-                object obj = ResourceManager.GetObject("button7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,16 +166,6 @@ namespace ATMSimulator.Properties {
         internal static System.Drawing.Bitmap button9 {
             get {
                 object obj = ResourceManager.GetObject("button9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cancelbutton {
-            get {
-                object obj = ResourceManager.GetObject("cancelbutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

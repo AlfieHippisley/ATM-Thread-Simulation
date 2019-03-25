@@ -129,7 +129,18 @@ namespace ATMSimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int length = InputLabel.Text.Length;
 
+            if (length == 6)
+            {
+                // Check Account Number
+                InputLabel.Text = "";
+            }
+
+            else
+            {
+                InputLabel.Text = InputLabel.Text + "1";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -173,6 +184,16 @@ namespace ATMSimulator
         }
 
         private void button0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InputLabel_Click(object sender, EventArgs e)
         {
 
         }

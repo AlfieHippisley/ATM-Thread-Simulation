@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ATMForm));
             this.LineSelectKey8 = new System.Windows.Forms.Button();
             this.LineSelectKey7 = new System.Windows.Forms.Button();
             this.LineSelectKey6 = new System.Windows.Forms.Button();
@@ -49,6 +50,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
+            this.TitleLabel = new System.Windows.Forms.Label();
+            this.InputLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LineSelectKey8
@@ -262,7 +265,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.BackgroundImage = global::ATMSimulator.Properties.Resources.button61;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Location = new System.Drawing.Point(363, 789);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
@@ -275,7 +278,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button7.BackgroundImage = global::ATMSimulator.Properties.Resources.button71;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.Location = new System.Drawing.Point(271, 836);
             this.button7.Margin = new System.Windows.Forms.Padding(0);
@@ -324,6 +327,32 @@
             this.button0.UseVisualStyleBackColor = false;
             this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.TitleLabel.ForeColor = System.Drawing.Color.White;
+            this.TitleLabel.Location = new System.Drawing.Point(104, 251);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(360, 39);
+            this.TitleLabel.TabIndex = 22;
+            this.TitleLabel.Text = "Enter Account Number";
+            this.TitleLabel.Click += new System.EventHandler(this.TitleLabel_Click);
+            // 
+            // InputLabel
+            // 
+            this.InputLabel.AutoSize = true;
+            this.InputLabel.BackColor = System.Drawing.Color.Transparent;
+            this.InputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputLabel.ForeColor = System.Drawing.Color.White;
+            this.InputLabel.Location = new System.Drawing.Point(221, 518);
+            this.InputLabel.Name = "InputLabel";
+            this.InputLabel.Size = new System.Drawing.Size(125, 38);
+            this.InputLabel.TabIndex = 23;
+            this.InputLabel.Text = "000000";
+            this.InputLabel.Click += new System.EventHandler(this.InputLabel_Click);
+            // 
             // ATMForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +360,8 @@
             this.BackgroundImage = global::ATMSimulator.Properties.Resources.atmbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 961);
+            this.Controls.Add(this.InputLabel);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
@@ -357,6 +388,7 @@
             this.Text = "ATM Simulator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -383,6 +415,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Label InputLabel;
     }
 }
 
