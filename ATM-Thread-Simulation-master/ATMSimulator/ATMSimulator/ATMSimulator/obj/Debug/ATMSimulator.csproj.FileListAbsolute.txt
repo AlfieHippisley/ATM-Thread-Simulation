@@ -1,0 +1,10 @@
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\bin\Debug\ATMSimulator.exe.config
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\bin\Debug\ATMSimulator.exe
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\bin\Debug\ATMSimulator.pdb
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.csprojAssemblyReference.cache
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.ATMForm.resources
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.Properties.Resources.resources
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.csproj.GenerateResource.cache
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.csproj.CoreCompileInputs.cache
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.exe
+C:\Users\spy\Downloads\ATM-Thread-Simulation-master (2)\ATM-Thread-Simulation-master\ATMSimulator\ATMSimulator\ATMSimulator\obj\Debug\ATMSimulator.pdb
