@@ -348,9 +348,8 @@
             this.InputLabel.ForeColor = System.Drawing.Color.White;
             this.InputLabel.Location = new System.Drawing.Point(221, 518);
             this.InputLabel.Name = "InputLabel";
-            this.InputLabel.Size = new System.Drawing.Size(125, 38);
+            this.InputLabel.Size = new System.Drawing.Size(0, 38);
             this.InputLabel.TabIndex = 23;
-            this.InputLabel.Text = "000000";
             this.InputLabel.Click += new System.EventHandler(this.InputLabel_Click);
             // 
             // ATMForm

@@ -104,7 +104,7 @@ namespace ATMSimulator
 
         private void LineSelectKey2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void LineSelectKey1_Click(object sender, EventArgs e)
@@ -127,20 +127,10 @@ namespace ATMSimulator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Start of buttons
+        public void button1_Click(object sender, EventArgs e)
         {
-            int length = InputLabel.Text.Length;
 
-            if (length == 6)
-            {
-                // Check Account Number
-                InputLabel.Text = "";
-            }
-
-            else
-            {
-                InputLabel.Text = InputLabel.Text + "1";
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)

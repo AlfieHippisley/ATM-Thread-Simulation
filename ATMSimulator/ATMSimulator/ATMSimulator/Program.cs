@@ -9,35 +9,33 @@ namespace ATMSimulator
 {
     class Program
     {
-        private Account[] ac = new Account[3];
-
-        private ATMForm atm1;
-        private ATMForm atm2;
+        // Array of accounts
+        public Account[] ac = new Account[3];
 
         public Program()
         {
+            // Accounts
             ac[0] = new Account(300, 1111, 111111);
             ac[1] = new Account(750, 2222, 222222);
             ac[2] = new Account(3000, 3333, 333333);
 
-            // This needs to be first
+            // This needs to be first, due to order of events
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Thread thr1 = new Thread(new ThreadStart(generateATM));
-            thr1.Start();
-            Thread thr2 = new Thread(new ThreadStart(generateATM));
-            thr2.Start();
-            Thread thr3 = new Thread(new ThreadStart(generateATM));
-            thr3.Start();
-            Thread thr4 = new Thread(new ThreadStart(generateATM));
-            thr4.Start();
-        }
+            ATM atm1 = new ATM(ac);
+            ATM atm2 = new ATM(ac);
+            ATM atm3 = new ATM(ac);
+            ATM atm4 = new ATM(ac);
 
-        private void generateATM()
-        {
-            atm1 = new ATMForm();
-            Application.Run(atm1);
+            Thread thr1 = new Thread(atm1.createForm);
+            thr1.Start();
+            Thread thr2 = new Thread(atm2.createForm);
+            thr2.Start();
+            Thread thr3 = new Thread(atm3.createForm);
+            thr3.Start();
+            Thread thr4 = new Thread(atm4.createForm);
+            thr4.Start();
         }
 
         static void Main()
@@ -45,16 +43,6 @@ namespace ATMSimulator
             new Program();
         }
     }
-
-    public partial class ATMForm : Form
-    {
-
-
-    }
-
-    /*
-     *   The Account class encapusulates all features of a simple bank account
-     */
 
     class Account
     {
@@ -128,4 +116,41 @@ namespace ATMSimulator
 
     }
 
+    class ATM
+    {
+        //local referance to the array of accounts
+        private Account[] ac;
+
+        //this is a referance to the account that is being used
+        private Account activeAccount = null;
+
+        // Atm 'power switch'
+        private Boolean atmOn = true;
+
+        private ATMForm atmForm;
+
+        public ATM(Account[] ac)
+        {
+            while (atmOn)
+            {
+                atmOn = false;
+            }
+        }
+
+        public void accountLogin()
+        {
+            
+        }
+
+        public void createForm()
+        {
+            ATMForm atmform = new ATMForm();
+            Application.Run(atmform);
+        }
+    }
+
+    public partial class ATMForm : Form
+    {
+
+    }
 }
