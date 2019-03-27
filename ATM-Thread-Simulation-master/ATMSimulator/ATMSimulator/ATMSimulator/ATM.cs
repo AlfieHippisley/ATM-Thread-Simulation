@@ -89,6 +89,22 @@ namespace ATMSimulator
 
         private void LineSelectKey8_Click(object sender, EventArgs e)
         {
+            if(step == 4)
+            {
+                step = 3;
+                TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                label2.Visible = true;
+                label3.Visible = true;
+                label4.Visible = true;
+                label5.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                label9.Visible = false;
+                label10.Visible = false;
+                label11.Visible = false;
+                label12.Visible = false;
+            }
             
         }
 
@@ -97,8 +113,22 @@ namespace ATMSimulator
             if(step == 3)
             {
                 TitleLabel.Text = "Returning card. Bye!";
-                Thread.Sleep(2000);
-                this.Close();
+                Thread.Sleep(1000);
+                label2.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                label9.Visible = false;
+                label10.Visible = false;
+                label11.Visible = false;
+                label12.Visible = false;
+                step = 1;
+                tries = 0;
+                accountnumber = null;
+                TitleLabel.Text = "Enter Account Number";
             }
             else if (step == 4)
             {
@@ -132,6 +162,7 @@ namespace ATMSimulator
                     label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
+                    label12.Visible = false;
                 }
             }
         }
@@ -161,6 +192,7 @@ namespace ATMSimulator
                     label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
+                    label12.Visible = false;
                 }
             }
         }
@@ -190,6 +222,7 @@ namespace ATMSimulator
                     label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
+                    label12.Visible = false;
                 }
             }
         }
@@ -226,7 +259,8 @@ namespace ATMSimulator
                         label9.Visible = false;
                         label10.Visible = false;
                         label11.Visible = false;
-                    }
+                        label12.Visible = false;
+                }
             }
             
         }
@@ -255,6 +289,7 @@ namespace ATMSimulator
                     label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
+                    label12.Visible = false;
                 }
             }
         }
@@ -275,6 +310,7 @@ namespace ATMSimulator
                 label9.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
+                label12.Visible = true;
             }
             else if (step == 4)
             {
@@ -298,6 +334,7 @@ namespace ATMSimulator
                     label9.Visible = false;
                     label10.Visible = false;
                     label11.Visible = false;
+                    label12.Visible = false;
                 }
             }
             
@@ -307,7 +344,23 @@ namespace ATMSimulator
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            TitleLabel.Text = "Returning card. Bye!";
+            Thread.Sleep(1000);
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+            step = 1;
+            tries = 0;
+            accountnumber = null;
+            TitleLabel.Text = "Enter Account Number";
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -449,6 +502,11 @@ namespace ATMSimulator
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }
