@@ -7,6 +7,8 @@ using System.Windows.Forms;
 
 namespace ATMSimulator
 {
+
+    // This contains the main program code
     public class Program
     {
         // Array of accounts
@@ -42,6 +44,7 @@ namespace ATMSimulator
 
     }
 
+    // This contains all code relating to the bank accounts
     public class Account
     {
         private int balance;
@@ -71,6 +74,13 @@ namespace ATMSimulator
         {
             if (this.balance > amount)
             {
+                var timer = Task.Run(async delegate
+                {
+                    await Task.Delay(2000);
+                    return 0;
+                });
+                timer.Wait();
+
                 balance -= amount;
                 return true;
             }
@@ -98,6 +108,7 @@ namespace ATMSimulator
         }
     }
 
+    // This contains some code realting to the ATM that could not be placed
     public class ATM
     {
         // Atm 'power switch'
@@ -157,6 +168,7 @@ namespace ATMSimulator
         }
     }
 
+    // This contains the code that controls and launches the ATM's
     public class CentralComputer
     {
         // Atm 'power switch'
@@ -255,6 +267,7 @@ namespace ATMSimulator
         }
     }
 
+    // This contains the code relating to the overview form (CentralComputer UI)
     public partial class Overview : Form
     {
         private CentralComputer centralComputer;
@@ -267,6 +280,7 @@ namespace ATMSimulator
         }
     }
 
+    // This contains the code realting to the ATM form (ATM UI)
     public partial class ATMForm : Form
     {
         private ATM atm;
