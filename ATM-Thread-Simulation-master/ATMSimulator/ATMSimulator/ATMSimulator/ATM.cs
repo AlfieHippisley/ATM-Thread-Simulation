@@ -14,8 +14,10 @@ namespace ATMSimulator
     public partial class ATMForm : Form
     {
         private Program program;
+
         //hold account number
         private Account accountnumber;
+
         //hold atm step
         // 1 - input account number
         // 2 - input pin
@@ -24,8 +26,13 @@ namespace ATMSimulator
         // 5 - check balance
         // 6 - exit (take card)
         private int step=1;
+
         //hold number of pin tries
         private int tries=0;
+
+        // Is the semaphore protection active
+        private Boolean activateSema = true;
+
         public ATMForm()
         {
             InitializeComponent();
@@ -82,6 +89,16 @@ namespace ATMSimulator
 
         }
 
+        public void setSemaFalse()
+        {
+            activateSema = false;
+        }
+
+        public void setSemaTrue()
+        {
+            activateSema = true;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -92,7 +109,11 @@ namespace ATMSimulator
             if(step == 4)
             {
                 step = 3;
+
+                if (activateSema) accountnumber.guard.WaitOne();
                 TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                if (activateSema) accountnumber.guard.Release();
+
                 label2.Visible = true;
                 label3.Visible = true;
                 label4.Visible = true;
@@ -145,7 +166,9 @@ namespace ATMSimulator
                 {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                 else
                 {
@@ -175,7 +198,9 @@ namespace ATMSimulator
                 {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                 else
                 {
@@ -205,7 +230,9 @@ namespace ATMSimulator
                 {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                 else
                 {
@@ -233,7 +260,9 @@ namespace ATMSimulator
             {
                 TitleLabel.Text = "Collect your money.";
                 Thread.Sleep(300);
+                if (activateSema) accountnumber.guard.WaitOne();
                 TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                if (activateSema) accountnumber.guard.Release();
                 label1.Text = String.Empty;
             }
             else if (step == 4)
@@ -242,7 +271,9 @@ namespace ATMSimulator
                     {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                     else
                     {
@@ -273,7 +304,9 @@ namespace ATMSimulator
                 {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                 else
                 {
@@ -298,7 +331,9 @@ namespace ATMSimulator
         {
             if (step == 3)
             {
+                if (activateSema) accountnumber.guard.WaitOne();
                 TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                if (activateSema) accountnumber.guard.Release();
                 step = 4;
                 label2.Visible = false;
                 label3.Visible = false;
@@ -318,7 +353,9 @@ namespace ATMSimulator
                 {
                     TitleLabel.Text = "Collect your money.";
                     Thread.Sleep(300);
+                    if (activateSema) accountnumber.guard.WaitOne();
                     TitleLabel.Text = "Your balance is: " + accountnumber.getBalance().ToString();
+                    if (activateSema) accountnumber.guard.Release();
                 }
                 else
                 {
@@ -374,6 +411,7 @@ namespace ATMSimulator
         {
             switch (step)
             {
+            
                 //enter account number
              case 1:
                     if (accountnumber != null)
@@ -491,6 +529,7 @@ namespace ATMSimulator
         {
 
         }
+
         private void TitleLabel_Click(object sender, EventArgs e)
         {
 

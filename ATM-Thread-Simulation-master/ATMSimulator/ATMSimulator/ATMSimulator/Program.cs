@@ -24,27 +24,15 @@ namespace ATMSimulator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
-
             ATM atm1 = new ATM(ac);
             ATM atm2 = new ATM(ac);
             ATM atm3 = new ATM(ac);
             ATM atm4 = new ATM(ac);
 
-            CentralComputer centralComputer = new CentralComputer();
+            CentralComputer centralComputer = new CentralComputer(ac);
 
             Thread thr1 = new Thread(centralComputer.createForm);
             thr1.Start();
-
-            //Thread thr1 = new Thread(atm1.createForm);
-            //thr1.Start();
-            //Thread thr2 = new Thread(atm2.createForm);
-            //thr2.Start();
-            //Thread thr3 = new Thread(atm3.createForm);
-            //thr3.Start();
-            //Thread thr4 = new Thread(atm4.createForm);
-            //thr4.Start();
-
         }
 
         static void Main()
@@ -59,12 +47,14 @@ namespace ATMSimulator
         private int balance;
         private int pin;
         private int accountNum;
+        public Semaphore guard;
 
         public Account(int balance, int pin, int accountNum)
         {
             this.balance = balance;
             this.pin = pin;
             this.accountNum = accountNum;
+            guard = new Semaphore(1,1);
         }
 
         public int getBalance()
@@ -110,7 +100,6 @@ namespace ATMSimulator
 
     public class ATM
     {
-
         // Atm 'power switch'
         private Boolean atmOn = true;
 
@@ -132,9 +121,19 @@ namespace ATMSimulator
             return accounts[1].getBalance();
         }
 
-        public void createForm()
+        // Create form with true semaphore setting
+        public void createFormTrue()
         {
             ATMForm atmform = new ATMForm(this);
+            atmform.setSemaTrue();
+            Application.Run(atmform);
+        }
+
+        // Create form with false semaphore setting
+        public void createFormFalse()
+        {
+            ATMForm atmform = new ATMForm(this);
+            atmform.setSemaFalse();
             Application.Run(atmform);
         }
 
@@ -160,10 +159,99 @@ namespace ATMSimulator
 
     public class CentralComputer
     {
+        // Atm 'power switch'
+        private Boolean centralComputerOn = true;
+
+        // Local accounts reference
+        public Account[] accounts { get; private set; }
+
+        public CentralComputer(Account[] ac)
+        {
+            while (centralComputerOn)
+            {
+                centralComputerOn = false;
+            }
+
+            accounts = ac;
+        }
+
         public void createForm()
         {
             Overview centralComputer = new Overview(this);
             Application.Run(centralComputer);
+        }
+
+        public void startATM(int numberToBeStarted, Boolean semaSetting)
+        {
+            ATM atm1 = new ATM(accounts);
+            ATM atm2 = new ATM(accounts);
+            ATM atm3 = new ATM(accounts);
+            ATM atm4 = new ATM(accounts);
+
+            if (numberToBeStarted == 1 && semaSetting == false)
+            {
+                Thread thr1 = new Thread(atm1.createFormFalse);
+                thr1.Start();
+            }
+            else if (numberToBeStarted == 2 && semaSetting == false)
+            {
+                Thread thr1 = new Thread(atm1.createFormFalse);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormFalse);
+                thr2.Start();
+            }
+            else if (numberToBeStarted == 3 && semaSetting == false)
+            {
+                Thread thr1 = new Thread(atm1.createFormFalse);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormFalse);
+                thr2.Start();
+                Thread thr3 = new Thread(atm1.createFormFalse);
+                thr3.Start();
+            }
+            else if (numberToBeStarted == 4 && semaSetting == false)
+            {
+                Thread thr1 = new Thread(atm1.createFormFalse);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormFalse);
+                thr2.Start();
+                Thread thr3= new Thread(atm1.createFormFalse);
+                thr3.Start();
+                Thread thr4= new Thread(atm1.createFormFalse);
+                thr4.Start();
+            }
+            else if (numberToBeStarted == 1 && semaSetting == true)
+            {
+                Thread thr1 = new Thread(atm1.createFormTrue);
+                thr1.Start();
+            }
+            else if (numberToBeStarted == 2 && semaSetting == true)
+            {
+                Thread thr1 = new Thread(atm1.createFormTrue);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormTrue);
+                thr2.Start();
+            }
+            else if (numberToBeStarted == 3 && semaSetting == true)
+            {
+                Thread thr1 = new Thread(atm1.createFormTrue);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormTrue);
+                thr2.Start();
+                Thread thr3 = new Thread(atm1.createFormTrue);
+                thr3.Start();
+            }
+            else if (numberToBeStarted == 4 && semaSetting == true)
+            {
+                Thread thr1 = new Thread(atm1.createFormTrue);
+                thr1.Start();
+                Thread thr2 = new Thread(atm1.createFormTrue);
+                thr2.Start();
+                Thread thr3 = new Thread(atm1.createFormTrue);
+                thr3.Start();
+                Thread thr4 = new Thread(atm1.createFormTrue);
+                thr4.Start();
+            }
         }
     }
 
